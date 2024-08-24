@@ -14,14 +14,14 @@ static struct {
 	const char *description;
 	enum option_type type;
 } options[] = {
-	{ "hint_activation_key", "A-M-x", "Activates hint mode.", OPT_KEY },
+	{ "activation_key", "A-M-C-J", "Activate normal movement mode (manual (c)ursor movement).", OPT_KEY },
+	{ "hint_activation_key", "A-M-C-K", "Activates hint mode.", OPT_KEY },
+	{ "screen_activation_key", "A-M-C-L", "Activate (s)creen selection mode.", OPT_KEY },
+	{ "history_activation_key", "A-M-C-:", "Activate history mode.", OPT_KEY },
 	{ "hint2_activation_key", "A-M-X", "Activate two pass hint mode.", OPT_KEY },
 	{ "grid_activation_key", "A-M-g", "Activates grid mode and allows for further manipulation of the pointer using the mapped keys.", OPT_KEY },
-	{ "history_activation_key", "A-M-h", "Activate history mode.", OPT_KEY },
-	{ "screen_activation_key", "A-M-s", "Activate (s)creen selection mode.", OPT_KEY },
-	{ "activation_key", "A-M-c", "Activate normal movement mode (manual (c)ursor movement).", OPT_KEY },
 
-	{ "hint_oneshot_key", "A-M-l", "Activate hint mode and exit upon selection.", OPT_KEY },
+	{ "hint_oneshot_key", "A-M-u", "Activate hint mode and exit upon selection.", OPT_KEY },
 	{ "hint2_oneshot_key", "A-M-L", "Activate two pass hint mode and exit upon selection.", OPT_KEY },
 
 	/* Normal mode keys */
@@ -35,16 +35,16 @@ static struct {
 	{ "drag_button", "1", "The mouse buttton used for dragging.", OPT_INT },
 	{ "oneshot_buttons", "n - /", "Oneshot mouse buttons (deactivate on click).", OPT_BUTTON },
 
+	{ "hint", "A-M-C-K", "Activate hint mode while in normal mode (mnemonic: x marks the spot?).", OPT_KEY },
+	{ "screen", "A-M-C-L", "Activate (s)creen selection while in normal mode.", OPT_KEY },
+	{ "history", "A-M-C-:", "Activate hint history mode while in normal mode.", OPT_KEY },
 	{ "print", "p", "Print the current mouse coordinates to stdout (useful for scripts).", OPT_KEY },
-	{ "history", ";", "Activate hint history mode while in normal mode.", OPT_KEY },
-	{ "hint", "x", "Activate hint mode while in normal mode (mnemonic: x marks the spot?).", OPT_KEY },
 	{ "hint2", "X", "Activate two pass hint mode.", OPT_KEY },
 	{ "grid", "g", "Activate (g)rid mode while in normal mode.", OPT_KEY },
-	{ "screen", "s", "Activate (s)creen selection while in normal mode.", OPT_KEY },
 
-	{ "left", "h", "Move the cursor left in normal mode.", OPT_KEY },
-	{ "down", "j", "Move the cursor down in normal mode.", OPT_KEY },
-	{ "up", "k", "Move the cursor up in normal mode.", OPT_KEY },
+	{ "left", "j", "Move the cursor left in normal mode.", OPT_KEY },
+	{ "down", "k", "Move the cursor down in normal mode.", OPT_KEY },
+	{ "up", "i", "Move the cursor up in normal mode.", OPT_KEY },
 	{ "right", "l", "Move the cursor right in normal mode.", OPT_KEY },
 	{ "top", "H", "Moves the cursor to the top of the screen in normal mode.", OPT_KEY },
 	{ "middle", "M", "Moves the cursor to the middle of the screen in normal mode.", OPT_KEY },
@@ -61,7 +61,7 @@ static struct {
 	{ "repeat_interval", "20", "The number of milliseconds before repeating a movement event.", OPT_INT },
 	{ "speed", "220", "Pointer speed in pixels/second.", OPT_INT },
 	{ "max_speed", "1600", "The maximum pointer speed.", OPT_INT },
-	{ "decelerator_speed", "50", "Pointer speed while decelerator is depressed.", OPT_INT },
+	{ "decelerator_speed", "150", "Pointer speed while decelerator is depressed.", OPT_INT },
 	{ "acceleration", "700", "Pointer acceleration in pixels/second^2.", OPT_INT },
 	{ "accelerator_acceleration", "2900", "Pointer acceleration while the accelerator is depressed.", OPT_INT },
 	{ "oneshot_timeout", "300", "The length of time in milliseconds to wait for a second click after a oneshot key has been pressed.", OPT_INT },
